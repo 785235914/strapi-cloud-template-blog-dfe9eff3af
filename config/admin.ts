@@ -155,7 +155,7 @@
 // import { env } from '@strapi/utils';
 
 // 工具函数：根据内容类型生成页面路径
-const getPreviewPathname = (uid, { locale, document, clientUrl }) => {
+const getPreviewPathname = (uid: string, { locale, document, clientUrl }: any): string => {
   const { slug } = document;
   switch (uid) {
     case 'api::page.page':
