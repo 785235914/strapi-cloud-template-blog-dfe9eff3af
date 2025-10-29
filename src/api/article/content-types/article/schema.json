@@ -23,11 +23,15 @@
       "type": "uid",
       "targetField": "title"
     },
-    "cover": {
+    "media": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
     },
     "author": {
       "type": "relation",
@@ -43,7 +47,43 @@
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+      "components": [
+        "shared.media",
+        "shared.quote",
+        "shared.rich-text",
+        "shared.slider"
+      ]
+    },
+    "notice": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::notice.notice",
+      "inversedBy": "articles"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "markdown": {
+      "type": "richtext"
+    },
+    "news": {
+      "type": "text"
+    },
+    "icorn": {
+      "type": "component",
+      "component": "shared.icorn",
+      "repeatable": false
+    },
+    "dynamiczone": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.slider",
+        "shared.seo",
+        "shared.rich-text",
+        "shared.quote",
+        "shared.media",
+        "shared.icorn"
+      ]
     }
   }
 }

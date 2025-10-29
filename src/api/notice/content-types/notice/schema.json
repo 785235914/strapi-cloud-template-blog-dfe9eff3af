@@ -1,38 +1,43 @@
 {
   "kind": "collectionType",
-  "collectionName": "authors",
+  "collectionName": "notices",
   "info": {
-    "singularName": "author",
-    "pluralName": "authors",
-    "displayName": "Author",
-    "description": "Create authors for your content"
+    "singularName": "notice",
+    "pluralName": "notices",
+    "displayName": "Notice"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "Title": {
       "type": "string"
     },
-    "avatar": {
+    "Description": {
+      "type": "blocks"
+    },
+    "Date": {
+      "type": "datetime"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Field": {
       "type": "media",
       "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
-        "videos"
+        "videos",
+        "audios"
       ]
-    },
-    "email": {
-      "type": "string"
     },
     "articles": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article",
-      "mappedBy": "author"
+      "mappedBy": "notice"
     }
   }
 }
